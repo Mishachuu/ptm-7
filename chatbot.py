@@ -110,7 +110,7 @@ async def info_gen(message: types.Message):
 @dp.message_handler(Text(equals='Привет'))
 async def info_gen(message: types.Message):
     await bot.send_message(chat_id=message.from_user.id,
-                           text='Здравстуй. Для получения информации напиши команду "/help"')
+                           text='Здравствуй. Для получения информации напиши команду "/help"')
     await bot.send_sticker(chat_id=message.from_user.id, sticker='CAACAgIAAxkBAAEJmwZkpeGgjk2_YXVNE3njxXp37Ps37AAC4RUAAiMcQUu72JdRoVaS3i8E')
     await message.delete()
     logger.info(f"chat id: {message.from_user.id} commands: hello")
@@ -174,7 +174,7 @@ async def cmd_gen(message: types.Message):
     if len(prompt) > 1:
         prompt = prompt.strip()
     else:
-        await bot.send_message(chat_id=message.from_user.id, text='Для генерации картинка вам необходимо отправить <</gen ваш запрос>>')
+        await bot.send_message(chat_id=message.from_user.id, text='Для генерации картинки необходимо отправить команду <</gen ваш запрос>>')
         logger.warning(f"chat id: {message.from_user.id} Error prompt {prompt}")
         return
     payload = {
